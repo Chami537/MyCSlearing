@@ -92,13 +92,23 @@ int isbalanced(char *str, charnode **top)
     {
         if (*p == '(' || *p == '{' || *p == '[')
         {
-            charpush(p, top);
+            charpush(*p, top);
         }
         else if (*p == ')' || *p == '}' || *p == ']')
         {
-
-            i
+            if (isempty(*top))
+            {
+                return 0;
+            }
+            char c = charpop(top);
+            if ((*p == ')' && c != '(') || (*p == '}' && c != '{') || (*p == ']' && c != '['))
+            {
+                return 0;
+            }
         }
         p++;
     }
+    if (isempty(*top) == 0) // 栈不为空，说明有左括号没匹配
+        return 0;
+    return 1;
 }

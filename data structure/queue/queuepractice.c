@@ -45,3 +45,11 @@ int dequeue(queue *q)
     }
     return k;
 }
+int isempty(queue *q)
+{
+    if (q->head == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
