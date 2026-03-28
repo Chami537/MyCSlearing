@@ -40,6 +40,36 @@ void postorder(node *root)
     postorder(root->right);
     printf("%d ", root->data);
 }
+int height(node *root)
+{
+    if (root == NULL)
+        return 0;
+    int leftheight = height(root->left);
+    int rightheight = height(root->right);
+    return leftheight > rightheight ? (leftheight + 1) : (rightheight + 1);
+}
+int countnode(node *root)
+{
+    if (root == NULL)
+        return 0;
+    return countnode(root->left) + countnode(root->right) + 1;
+}
+int issymmetric(node *root)
+{
+    if (root == NULL)
+        return 1;
+    return ismirror(root->left, root->right);
+}
+
+int ismirror(node *left, node *right)
+{
+    if (left == NULL && right == NULL)
+        return 1;
+    if (left == NULL || right == NULL)
+        return 0;
+    return left->data == right->data && ismirror(left->left, right->right) && ismirror(left->right, right->left);
+}
+
 int main()
 {
     node *head = creatnewnode(1);
