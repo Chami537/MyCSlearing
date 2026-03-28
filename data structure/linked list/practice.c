@@ -151,6 +151,7 @@ int hascycle(Node *head)
     }
     return 0;
 }
+
 int main()
 {
     return 0;
