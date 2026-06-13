@@ -2,7 +2,6 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Language-C%2B%2B%20%7C%20Python-00599C?style=flat-square" alt="Language">
-  <a href="https://x.com/Aki7y999"><img src="https://img.shields.io/twitter/follow/Aki7y999?style=social" alt="X Follow"></a>
 </p>
 
 ---
